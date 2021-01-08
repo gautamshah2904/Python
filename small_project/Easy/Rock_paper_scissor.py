@@ -1,7 +1,3 @@
-#Rock paper Scissors
-#Rock can loss against paper
-#Paper can loss against scissors
-#Scissor can loss against Rock
 import random as rand
 def RPS(User_name):
     option='Rock paper Scissor'.split(' ')
@@ -33,10 +29,11 @@ def user_option_select():
         return user_option_select()
     else:
         return user_input
-while True:
-    if RPS(user_input()):
-        select=input('Do you want to play again(y/n):')
-        if 'y'==select[0]:
-            RPS(user_input())
-        else:
-            break
+def RPS_caller():
+    while True:
+        if RPS(user_input()):
+            if 'y'==input('Do you want to play again(y/n):')[0]:
+                RPS(user_input())
+            else:
+                break
+RPS_caller()
